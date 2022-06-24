@@ -11,18 +11,30 @@ document.querySelector("button").addEventListener("click", (e) => {
   let cacheTmg = "?nn" + timeStart;
   downloadSRC.src = imageLink + cacheTmg;
   downloadSRC.onload = function () {
-    document.querySelector(".loader").classList.add("hide");
-    document.querySelector(".loader_content").classList.remove("hide");
-    document.querySelector(".content").classList.remove("hide");
-    // document.querySelector("button").classList.add("hide");
-    e.target.innerHTML = "Check Again"
     timeEnd = new Date().getTime();
     let timeDuration = (timeEnd - timeStart) / 1000,
       loadedByBytes = downLoadSize * 8,
       totalDownloadSpeed = (loadedByBytes / timeDuration / 1024 / 1024).toFixed(
         2
       );
-    document.querySelector(".content").innerHTML =
-      totalDownloadSpeed + "<small>Mbps</small>";
+    let i = 0,
+      speedOut;
+    const animate = () => {
+      if (i < totalDownloadSpeed) {
+        document.querySelector(".content").innerHTML =
+          i.toFixed(2) + "<small>Mbps</small>";
+        setTimeout(animate, 30);
+        i += 1.02;
+      }
+      else{
+        document.querySelector(".content").innerHTML =
+          totalDownloadSpeed + "<small>Mbps</small>";
+      }
+    };
+    animate();
+    document.querySelector(".loader").classList.add("hide");
+    document.querySelector(".loader_content").classList.remove("hide");
+    document.querySelector(".content").classList.remove("hide");
+    e.target.innerHTML = "Check Again";
   };
 });
