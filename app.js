@@ -37,13 +37,3 @@ document.querySelector("button").addEventListener("click", (e) => {
     e.target.innerHTML = "Check Again";
   };
 });
-let smallCursor = document.querySelector(".small-cursor"),
-  largeCursor = document.querySelector(".large-cursor");
-document.onmousemove = function (e) {
-  smallCursor.style.left = e.pageX - 4 + "px";
-  smallCursor.style.top = e.pageY - 4 + "px";
-  smallCursor.style.display = "block";
-  largeCursor.style.left = e.pageX - 18 + "px";
-  largeCursor.style.top = e.pageY - 18 + "px";
-  largeCursor.style.display = "block";
-};
