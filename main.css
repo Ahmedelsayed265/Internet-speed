@@ -24,33 +24,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  overflow: hidden;
-  position: relative;
-  cursor: none;
-}
-
-body .small-cursor {
-  width: 8px;
-  height: 8px;
-  background: #01b6be;
-  position: absolute;
-  border-radius: 50%;
-  display: none;
-  z-index: 1;
-}
-
-body .large-cursor {
-  width: 36px;
-  height: 36px;
-  border: 1px solid #01b6be;
-  position: absolute;
-  border-radius: 50%;
-  display: none;
-  z-index: 1;
-  -webkit-transition-duration: .2s;
-          transition-duration: .2s;
-  -webkit-transition-timing-function: ease-out;
-          transition-timing-function: ease-out;
 }
 
 .container {
@@ -133,12 +106,11 @@ body .large-cursor {
 }
 
 .container .loader_widget .loader_content button {
-  cursor: none;
-  z-index: 2;
   position: relative;
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  cursor: pointer;
   font-size: 26px;
   line-height: 1.5;
   font-weight: 600;

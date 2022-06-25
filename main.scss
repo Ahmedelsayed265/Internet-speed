@@ -15,29 +15,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  position: relative;
-  cursor: none;
-  .small-cursor{
-    width: 8px;
-    height: 8px;
-    background: #01b6be;
-    position: absolute;
-    border-radius: 50%;
-    display: none;
-    z-index: 1;
-  }
-  .large-cursor{
-    width: 36px;
-    height: 36px;
-    border:1px solid #01b6be;
-    position: absolute;
-    border-radius: 50%;
-    display: none;
-    z-index: 1;
-    transition-duration: .2s;
-    transition-timing-function: ease-out;
-  }
 }
 .container {
   padding: 20px;
@@ -86,12 +63,11 @@ body {
       justify-content: center;
       flex-wrap: wrap;
       button {
-        cursor: none;
-        z-index: 2;
         position: relative;
         width: 200px;
         height: 200px;
         border-radius: 50%;
+        cursor: pointer;
         font-size: 26px;
         line-height: 1.5;
         font-weight: 600;
